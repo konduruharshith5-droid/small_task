@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Commissioner ,'Courier New', Courier, monospace;
+}
+
+.body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(41, 38, 38);
+}
+
+.managebox {
+  height: 100%;
+  width: 100%;
+  background-color: #f7f8f9;
+  position: relative;
+
+  &__nav {
+    min-height: 68px;
+    width: 100%;
+    background-color: #ffffff;
+    font-weight: 400;
+    padding: 24px 12px;
+    font-size: 25px;
+  }
+}
+
+.userlist {
+  height: 685px;
+  width: 95%;
+  background-color: #ffffff;
+  margin: 20px auto;
+  border-radius: 10px;
+
+  &__search {
+    width: 100%;
+    height: 66px;
+    background-color: #ffffff;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-right: 14px;
+    padding-left: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #C2CAD3;
+    margin-bottom: 6px;
+
+    &__box {
+      width: 310px;
+      height: 34px;
+      max-width: 310px;
+      min-height: 34px;
+      border-radius: 4px;
+      border: 1px solid #C2CAD3;
+      padding: 4px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__in {
+        outline: none;
+        border: none;
+        font-size: 15px;
+        width: 268px;
+      }
+    }
+  }
+
+  &__memberlayout {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    margin-bottom: 5px;
+    
+    &__body {
+      font-weight: 400;
+    }
+  }
+
+  &__memberlist {
+    height: 74%;
+    width: 100%;
+    overflow: auto;
+
+    &__body {
+      height: 56px;
+
+      &__member {
+        font-size: 11px;
+        font-weight: 100;
+      }
+    }
+
+    &__loadname {
+      height: 12px;
+      width: 95%;
+      background-color: #E1E4E9;
+      border-radius: 16px;
+    }
+
+    &__loadcompany {
+      width: 95%;
+      height: 12px;
+      background-color: #E1E4E9;
+      border-radius: 16px;
+    }
+
+    &__loadaddress {
+      height: 12px;
+      width: 95%;
+      background-color: #E1E4E9;
+      border-radius: 16px;
+    }
+
+    &__loadrole {
+      height: 12px;
+      width: 95%;
+      background-color: #E1E4E9;
+      border-radius: 16px;
+    }
+
+    &__loadphone {
+      height: 12px;
+      width: 95%;
+      background-color: #E1E4E9;
+      border-radius: 16px;
+    }
+  }
+
+  &__nodata {
+    height: 74%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__first {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    &__second {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+  }
+
+  &__foot {
+    height: 10%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0 20px;
+    gap: 10px;
+    font-weight: normal;
+
+    &__show {
+      font-weight: 150;
+      font-size: 13px;
+    }
+
+    &__setlimit {
+      height: 32px;
+      width: 66px;
+      border: 1px solid #C2CAD3;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+
+      &__limit {
+        height: 100%;
+        width: 50%;
+        border: none;
+        outline: none;
+      }
+
+      &__btn {
+        height: 100%;
+        width: 50%;
+        background-color: #ffffff;
+        border: none;
+      }
+    }
+
+    &__change {
+      display: flex;
+      gap: 10px;
+
+      &__dots {
+        height: 34px;
+        width: 34px;
+      }
+
+      &__box {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        border: none;
+        background-color: transparent;
+      }
+
+      &__dark {
+        background-color: #F0F2F4;
+        border: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+      }
+
+      &__numbox {
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 34px;
+        width: 34px;
+
+        &--activate {
+          background-color: #EBF5FF;
+          width: 32px;
+          height: 32px;
+          border-radius: 8px;
+          border: 1px solid #084782;
+        }
+
+        // &:hover {
+        //   background-color: grey;
+        //   cursor: pointer;
+        // }
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* removes gaps */
+  table-layout: fixed;     /* important for consistent column widths */
+  border-bottom: 1px solid #C2CAD3;
+  font-weight: normal;
+}
+
+th, td {
+  height: 50px;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+  font-weight: normal;
+}
+
+th {
+  background-color: #ffffff;
+  border-bottom: #C2CAD3;
+}
+
+// .tablerow {
+
+//   &__name {
+//     width: 22%;
+//   }
+
+//   &__company {
+//     width: 15%;
+//   }
+
+//   &__address{
+//     width: 28%;
+//   }
+
+//   &__role {
+//     width: 15%;
+//   }
+
+//   &__phone {
+//     width: 20%;
+//   }
+// }
+
+.email {
+  font-size: 9px;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+
+.layout-gap {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: left;
+
+  &__symb {
+    display: flex;
+    flex-direction: column;
+
+    &__svg {
+      background-color: #ffffff;
+      border: none;
+      height: 13px;
+      width: 20px;
+      vertical-align: bottom;
+
+      &__bottom {
+        background-color: #ffffff;
+        border: none;
+        height: 13px;
+        width: 20px;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+
+
+// .nav {
+//   height: 6vh;
+//   width: 100%;
+//   background-color: rgb(252, 244, 244);
+//   font-weight: 600;
+//   padding: 10px;
+//   font-size: 25px;
+// }
