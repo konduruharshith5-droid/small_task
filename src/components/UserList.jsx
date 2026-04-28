@@ -32,7 +32,7 @@ function UserList({data, isFetching, skip, setSkip, limit, setLimit, searchText,
         <div className='userlist__nodata'>
           <div>
             <div className='userlist__nodata__first'>No Users Found </div>
-            <div className='userlist__nodata__second'>we Couldn't Find Any Users. Try Another Name or Clear Your Search</div>
+            <div className='userlist__nodata__second'>We Couldn't Find Any Users. Try Another Name or Clear Your Search</div>
           </div>
         </div>
       ))}
