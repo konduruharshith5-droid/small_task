@@ -14,8 +14,8 @@
 }
 
 .managebox {
-  min-height: 778px;
-  min-width: 1132px;
+  // min-height: 778px;
+  // min-width: 1132px;
   height: 100%;
   width: 100%;
   background-color: #f7f8f9;
@@ -53,7 +53,7 @@
 
   &__search {
     width: 100%;
-    min-width: 1084px;
+    // min-width: 1084px;
     height: 66px;
     background-color: #ffffff;
     border-radius: 8px 8px 0 0;
@@ -66,7 +66,6 @@
       width: 310px;
       height: 34px;
       max-width: 310px;
-      min-height: 34px;
       border-radius: 4px;
       border: 1px solid #C2CAD3;
       padding: 4px 8px;
@@ -80,7 +79,6 @@
         border: none;
         font-size: 14px;
         width: 268px;
-        font-style: regular;
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0px;
@@ -91,7 +89,7 @@
   &__memberlayout {
     height: 40px;
     width: 100%;
-    min-width: 1084px;
+    // min-width: 1084px;
     display: flex;
     align-items: center;
     background-color: #ffffff;
@@ -104,7 +102,7 @@
   &__memberlist {
     height: 74%;
     width: 100%;
-    min-width: 1084px;
+    // min-width: 1084px;
 
     &__body {
 
@@ -188,10 +186,10 @@
 
   &__foot {
     height: 50px;
-    min-width: 1084px;
+    // min-width: 1084px;
     width: 100%;
     background-color: #ffffff;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 8px 8px; 
     display: flex;
     align-items: center;
     justify-content: right;
