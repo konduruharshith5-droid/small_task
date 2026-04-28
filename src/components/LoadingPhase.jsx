@@ -4,7 +4,7 @@ function LoadingPhase() {
   return (
     <div>
       <table>
-        <tbody>
+        <tbody className='userlist__memberlist__body'>
           {/* <colgroup>
             <col style={{width: "22%"}} />
             <col style={{width: "10%"}} />
@@ -12,7 +12,7 @@ function LoadingPhase() {
             <col style={{width: "10%"}} />
             <col style={{width: "20%"}} />
           </colgroup> */}
-          <tr className='tablerow'>
+          <tr className='userlist__memberlist__body__member'>
             <th><div className='userlist__memberlist__loadname'></div></th>
             <th><div className='userlist__memberlist__loadcompany'></div></th>
             <th><div className='userlist__memberlist__loadaddress'></div></th>

@@ -3,7 +3,9 @@ import React from 'react'
 function Nav() {
   return (
     <div className='managebox__nav'>
-      Manage Users
+      <div className='managebox__nav__text'>
+        Manage Users
+      </div>
     </div>
   )
 }

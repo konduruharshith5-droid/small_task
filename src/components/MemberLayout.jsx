@@ -4,19 +4,19 @@ function MemberLayout({sortAsc, setSortAsc, sortDesc, setSortDesc, setSkip, acti
   return (
     <div className='userlist__memberlayout'>
       <table>
-        <colgroup>
+        {/* <colgroup>
             <col style={{width: "22%"}} />
             <col style={{width: "15%"}} />
             <col style={{width: "28%"}} />
             <col style={{width: "15%"}} />
             <col style={{width: "20%"}} />
-          </colgroup>
-        <tbody className='userlist__memberlayout__body'>
-          <tr className='tablerow'>
-              <th className='layout-gap tablerow__name'>
+          </colgroup> */}
+        <tbody>
+          <tr>
+              <th className='layout-gap'>
                 <div>User</div>
                 <div className='layout-gap__symb'>
-                  <button className='layout-gap__symb__svg' 
+                  <button className='layout-gap__symb__svg1' 
                   onClick={() => {
                         setSortAsc(true);
                         setSortDesc(false);
@@ -30,7 +30,7 @@ function MemberLayout({sortAsc, setSortAsc, sortDesc, setSortDesc, setSkip, acti
                           </svg>
                           }
                   </button>
-                  <button className='layout-gap__symb__svg__bottom' onClick={() => {setSortDesc(true); setSortAsc(false); setSkip(0); setActivatePage(0)}}>{!sortDesc ? <svg width="9" height="6" viewBox="0 0 9 6" fill="none" fillRule='evenodd' clipRule="evenodd" xmlns="http://www.w3.org/2000/svg">
+                  <button className='layout-gap__symb__svg2' onClick={() => {setSortDesc(true); setSortAsc(false); setSkip(0); setActivatePage(0)}}>{!sortDesc ? <svg width="9" height="6" viewBox="0 0 9 6" fill="none" fillRule='evenodd' clipRule="evenodd" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.5 5.36999C4.76199 5.36999 4.96233 5.22599 5.2089 4.99799L8.68664 1.73999C8.88185 1.55399 9 1.284 9 1.002C9 0.413995 8.57877 -5.28203e-06 8.14726 -5.31976e-06C7.93151 -5.33862e-06 7.71575 0.101995 7.52055 0.287995L4.5 3.08399L1.48459 0.287994C1.28425 0.101994 1.07363 -5.93815e-06 0.85274 -5.95746e-06C0.421233 -5.99519e-06 4.33267e-07 0.413994 3.81863e-07 1.00199C3.57209e-07 1.28399 0.118151 1.55399 0.318493 1.73999L3.7911 4.99799C4.03767 5.23199 4.23801 5.36999 4.5 5.36999Z" fill="#ADBBCC"/>
 </svg> : <svg width="9" height="6" viewBox="0 0 9 6" fill="none" fillRule='evenodd' clipRule="evenodd" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.5 5.36999C4.76199 5.36999 4.96233 5.22599 5.2089 4.99799L8.68664 1.73999C8.88185 1.55399 9 1.284 9 1.002C9 0.413995 8.57877 -5.28203e-06 8.14726 -5.31976e-06C7.93151 -5.33862e-06 7.71575 0.101995 7.52055 0.287995L4.5 3.08399L1.48459 0.287994C1.28425 0.101994 1.07363 -5.93815e-06 0.85274 -5.95746e-06C0.421233 -5.99519e-06 4.33267e-07 0.413994 3.81863e-07 1.00199C3.57209e-07 1.28399 0.118151 1.55399 0.318493 1.73999L3.7911 4.99799C4.03767 5.23199 4.23801 5.36999 4.5 5.36999Z" fill="#08090A"/>
@@ -39,10 +39,10 @@ function MemberLayout({sortAsc, setSortAsc, sortDesc, setSortDesc, setSkip, acti
               </button> 
               </div>
               </th>
-              <th className='tablerow__company'>Company</th>
-              <th className='tablerow__address'>Address</th>
-              <th className='tablerow__role'>Role</th>
-              <th className='tablerow__phone'>Phone</th>
+              <th>Company</th>
+              <th>Address</th>
+              <th>Role</th>
+              <th>Phone</th>
           </tr>
         </tbody>
       </table>

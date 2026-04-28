@@ -83,7 +83,7 @@ function Foot({data, skip, setSkip, limit, setLimit, activatePage, setActivatePa
     <div className='userlist__foot'>
       <h3 className='userlist__foot__show'>Show</h3>
       <div className='userlist__foot__setlimit'>
-      <input type='text' value={limit} onChange={(e) => {setLimit(Math.min(Number(e.target.value), 10))}} className='userlist__foot__setlimit__limit' />
+      <input type='text' value={limit + 1} onChange={(e) => {setLimit(Math.min(Number(e.target.value), 9))}} className='userlist__foot__setlimit__limit' />
       <button className='userlist__foot__setlimit__btn' onClick={() => {setLimit(Math.max(1,limit - 1))}}  ><svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M5.2793 6.17578C5.53125 6.17578 5.74805 6.07617 5.94141 5.88281L10.3301 1.38281C10.4824 1.23047 10.5645 1.04297 10.5645 0.820312C10.5645 0.363281 10.2012 0 9.75 0C9.52734 0 9.31641 0.0878906 9.15234 0.251953L5.28516 4.23633L1.41211 0.251953C1.24805 0.09375 1.04297 0 0.814453 0C0.363281 0 0 0.363281 0 0.820312C0 1.04297 0.0820312 1.23047 0.234375 1.38867L4.62305 5.88281C4.82812 6.08203 5.0332 6.17578 5.2793 6.17578Z" fill="#677A90"/>
       </svg>

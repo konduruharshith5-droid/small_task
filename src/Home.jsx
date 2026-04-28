@@ -6,13 +6,14 @@ import { useSearchMembersQuery } from './features/Api/Members';
 function Home() {
 
   const [searchText, setSearchText] = useState("");
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(9);
   const [skip, setSkip] = useState(0);
   const [sortAsc, setSortAsc] = useState(false);
   const [sortDesc, setSortDesc] = useState(false);
   const [sortByFieldName, setSortByFieldName] = useState('firstName');
   const order = sortAsc ? 'asc' : sortDesc ? 'desc' : null;
   const [activatePage, setActivatePage] = useState(0)
+
 
   const { data, isLoading, isFetching,  error } = useSearchMembersQuery({searchText, limit, order, skip, sortByFieldName});
 
