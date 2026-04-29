@@ -11,10 +11,20 @@ export const MembersApi = createApi({
         //     query: () => 'users',
         //     providesTags: ['Members']
         // }), 
+        // searchMembers: builder.query({
+        //     query: ({searchText, limit, order, skip, sortByFieldName}) => `search?limit=${limit}&skip=${skip}&${searchText.length > 0 ? `q=${encodeURIComponent(searchText)}&` : ""}${order && sortByFieldName ? `sortBy=${sortByFieldName}&order=${order}` : ""}`,
+        //     providesTags: ['Members']
+        // }),
+
         searchMembers: builder.query({
-            query: ({searchText, limit, order, skip, sortByFieldName}) => `search?limit=${limit}&skip=${skip}&${searchText.length > 0 ? `q=${encodeURIComponent(searchText)}&` : ""}${order && sortByFieldName ? `sortBy=${sortByFieldName}&order=${order}` : ""}`,
+            query: ({searchText, limit, order, skip, sortByFieldName}) => ({
+                url: `search`,
+                method : 'GET',
+                params : {searchText : searchText ? searchText : undefined , limit: limit ? limit : undefined, skip : skip ? skip : undefined, order: order ? order : undefined, sortByFieldName: sortByFieldName ? sortByFieldName : undefined}
+            }), 
             providesTags: ['Members']
         }),
+        
         // sortMembersAsc: builder.query({
         //     query: ({order, limit, page}) => `users/search?sortBy=firstName&order=${order}&limit=${limit}&skip=${page}`,
         //     providesTags: ['Members']
