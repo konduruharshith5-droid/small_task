@@ -16,15 +16,36 @@ export const MembersApi = createApi({
         //     providesTags: ['Members']
         // }),
 
+        // searchMembers: builder.query({
+        //     query: ({searchText, limit, order, skip, sortByFieldName}) => ({
+        //         url: `search`,
+        //         method : 'GET',
+        //         params : {searchText : searchText ? searchText : undefined , limit: limit ? limit : undefined, skip : skip ? skip : undefined, order: order ? order : undefined, sortByFieldName: sortByFieldName ? sortByFieldName : undefined}
+        //     }), 
+        //     providesTags: ['Members']
+        // }),
+
         searchMembers: builder.query({
-            query: ({searchText, limit, order, skip, sortByFieldName}) => ({
-                url: `search`,
-                method : 'GET',
-                params : {searchText : searchText ? searchText : undefined , limit: limit ? limit : undefined, skip : skip ? skip : undefined, order: order ? order : undefined, sortByFieldName: sortByFieldName ? sortByFieldName : undefined}
-            }), 
+            query: ({searchText, limit, skip, order, sortByFieldName}) => {
+                const params = new URLSearchParams();
+
+                params.set("limit", limit);
+                params.set("skip", skip);
+
+                if (searchText) {
+                    params.set("q", searchText);
+                }
+
+                if (order && sortByFieldName) {
+                    params.set("order", order);
+                    params.set("sortByFieldName", sortByFieldName);
+                }
+
+                return `search?${params.toString()}`
+            }, 
             providesTags: ['Members']
-        }),
-        
+        })
+
         // sortMembersAsc: builder.query({
         //     query: ({order, limit, page}) => `users/search?sortBy=firstName&order=${order}&limit=${limit}&skip=${page}`,
         //     providesTags: ['Members']
