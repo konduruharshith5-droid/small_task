@@ -96,9 +96,9 @@ function Foot({data, skip, setSkip, limit, setLimit, activatePage, setActivatePa
             </svg>
             </div>
             {activatepagination && <div className='userlist__foot__main__show__setlimit__range'>
-              <div className='userlist__foot__main__show__setlimit__range__num' onClick={() => {setLimit(9), setActivatepagination(false)}}>10</div>
-              <div className='userlist__foot__main__show__setlimit__range__num' onClick={() => {setLimit(19), setActivatepagination(false)}}>20</div>
-              <div className='userlist__foot__main__show__setlimit__range__num' onClick={() => {setLimit(49), setActivatepagination(false)}}>50</div>
+              <div className='userlist__foot__main__show__setlimit__range__num' onClick={() => {setLimit(9), setActivatepagination(false), setSkip(0)}}>10</div>
+              <div className='userlist__foot__main__show__setlimit__range__num' onClick={() => {setLimit(19), setActivatepagination(false), setSkip(0)}}>20</div>
+              <div className='userlist__foot__main__show__setlimit__range__num' onClick={() => {setLimit(49), setActivatepagination(false), setSkip(0)}}>50</div>
             </div>}
             </div>
         </div>
