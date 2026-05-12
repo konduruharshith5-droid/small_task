@@ -4,7 +4,9 @@ function Nav() {
   return (
     <div className='managebox__nav'>
       <div className='managebox__nav__text'>
-        Manage Users
+        <div className='managebox__nav__text__con'>
+          Manage Users
+        </div>
       </div>
     </div>
   )

@@ -11,40 +11,52 @@ export const MembersApi = createApi({
         //     query: () => 'users',
         //     providesTags: ['Members']
         // }), 
-        // searchMembers: builder.query({
-        //     query: ({searchText, limit, order, skip, sortByFieldName}) => `search?limit=${limit}&skip=${skip}&${searchText.length > 0 ? `q=${encodeURIComponent(searchText)}&` : ""}${order && sortByFieldName ? `sortBy=${sortByFieldName}&order=${order}` : ""}`,
-        //     providesTags: ['Members']
-        // }),
-
-        // searchMembers: builder.query({
-        //     query: ({searchText, limit, order, skip, sortByFieldName}) => ({
-        //         url: `search`,
-        //         method : 'GET',
-        //         params : {searchText : searchText ? searchText : undefined , limit: limit ? limit : undefined, skip : skip ? skip : undefined, order: order ? order : undefined, sortByFieldName: sortByFieldName ? sortByFieldName : undefined}
-        //     }), 
-        //     providesTags: ['Members']
-        // }),
-
         searchMembers: builder.query({
-            query: ({searchText, limit, skip, order, sortByFieldName}) => {
-                const params = new URLSearchParams();
-
-                params.set("limit", limit);
-                params.set("skip", skip);
-
-                if (searchText) {
-                    params.set("q", searchText);
-                }
-
-                if (order && sortByFieldName) {
-                    params.set("order", order);
-                    params.set("sortByFieldName", sortByFieldName);
-                }
-
-                return `search?${params.toString()}`
-            }, 
+            query: ({searchText, limit, order, skip, sortByFieldName}) => `search?limit=${limit}&skip=${skip}&${searchText.length > 0 ? `q=${encodeURIComponent(searchText)}&` : ""}${order && sortByFieldName ? `sortBy=${sortByFieldName}&order=${order}` : ""}`,
             providesTags: ['Members']
-        })
+        }),
+
+        // searchMembers: builder.query({
+        //     query: ({searchText, limit, order, skip, sortByFieldName}) => {
+        //         const isSearching = searchText && searchText.trim().length > 0
+
+        //         return {
+        //         url: isSearching ? `search` : '',
+        //         method : 'GET',
+        //         params : {
+        //             limit, 
+        //             skip, 
+        //             ...(isSearching && {q: searchText}),
+        //             ...(order && sortByFieldName && {
+        //                 sortBy: sortByFieldName, 
+        //                 order
+        //             })
+        //         }
+            
+        //     }}, 
+        //     providesTags: ['Members']
+        // }),
+
+        // searchMembers: builder.query({
+        //     query: ({searchText, limit, skip, order, sortByFieldName}) => {
+        //         const params = new URLSearchParams();
+
+        //         params.append("limit", limit);
+        //         params.append("skip", skip);
+
+        //         if (searchText) {
+        //             params.append("q", searchText);
+        //         }
+
+        //         if (order && sortByFieldName) {
+        //             params.append("order", order);
+        //             params.append("sortByFieldName", sortByFieldName);
+        //         }
+
+        //         return `search?${params.toString()}`
+        //     }, 
+        //     providesTags: ['Members']
+        // }),
 
         // sortMembersAsc: builder.query({
         //     query: ({order, limit, page}) => `users/search?sortBy=firstName&order=${order}&limit=${limit}&skip=${page}`,

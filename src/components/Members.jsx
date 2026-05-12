@@ -4,20 +4,47 @@ function Members({user, isLoading}) {
   return (
     <div>
       <table>
-        {/* <colgroup>
-            <col style={{width: "22%"}} />
-            <col style={{width: "15%"}} />
-            <col style={{width: "28%"}} />
-            <col style={{width: "15%"}} />
-            <col style={{width: "20%"}} />
-          </colgroup> */}
         <tbody className='userlist__memberlist__body'>
           <tr className='userlist__memberlist__body__member'>
-            <th>{user.firstName} {user.lastName} <br /> <div className='email'>{user.email}</div></th>
-            <th>{user.company.name}</th>
-            <th>{user.address.address}</th>
-            <th className='role'>{user.role}</th>
-            <th>{user.phone}</th>
+            <td className='userlist__memberlist__body__member__name'>
+              <div className='userlist__memberlist__body__member__name__full'>
+                <div className='userlist__memberlist__body__member__name__full__name'>
+                  {user.firstName} {user.lastName}
+                </div>
+              </div>
+              <div className='userlist__memberlist__body__member__name__email'>
+                <div className='userlist__memberlist__body__member__name__email__con'>
+                  {user.email}
+                </div>
+              </div></td>
+            <td className='userlist__memberlist__body__member__company'>
+              <div className='userlist__memberlist__body__member__company__name'>
+                <div className='userlist__memberlist__body__member__company__name__con'>
+                  {user.company.name}
+                </div>
+              </div>
+            </td>
+            <td className='userlist__memberlist__body__member__address'>
+              <div className='userlist__memberlist__body__member__address__name'>
+                <div className='userlist__memberlist__body__member__address__name__con'>
+                  {user.address.address}
+                </div>
+              </div>
+            </td>
+            <td className='userlist__memberlist__body__member__role'>
+              <div className='userlist__memberlist__body__member__role__name'>
+                <div className='userlist__memberlist__body__member__role__name__con'>
+                  {user.role}
+                </div>
+              </div>
+            </td>
+            <td className='userlist__memberlist__body__member__phone'>
+              <div className='userlist__memberlist__body__member__phone__name'>
+                <div className='userlist__memberlist__body__member__phone__name__con'>
+                  {user.phone}
+                </div>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
